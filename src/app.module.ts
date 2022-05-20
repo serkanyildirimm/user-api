@@ -7,7 +7,7 @@ import { UserModule } from './user/user.module';
   imports: [
     MongooseModule.forRootAsync({
       imports: [ConfigModule.forRoot()],
-      connectionName: 'UserConnection',
+      connectionName: 'user-connection',
       useFactory: async (configService: ConfigService) => ({
         uri: configService.get<string>('MONGODB_URI'),
       }),
